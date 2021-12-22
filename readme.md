@@ -1,0 +1,6 @@
+## [Project: Simple Tic-Tac-Toe](https://hyperskill.org/projects/48)
+#### [Work on project. Stage 1/5: Welcome to the battlefield!](https://hyperskill.org/projects/48/stages/255/implement)
+#### [Work on project. Stage 2/5: The user is the gamemaster](https://hyperskill.org/projects/48/stages/256/implement)
+#### [Work on project. Stage 3/5: What's up on the field?](https://hyperskill.org/projects/48/stages/257/implement)
+#### [Work on project. Stage 4/5: First move!](https://hyperskill.org/projects/48/stages/258/implement)
+#### [Work on project. Stage 5/5: Fight!](https://hyperskill.org/projects/48/stages/259/implement)
