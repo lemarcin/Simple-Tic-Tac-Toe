@@ -8,19 +8,31 @@ public class Main {
         char[][] grid = enterCells().clone();
         print(grid);
         char nextMove = 'X';
-        enterCoordinates(grid, nextMove);
-        print(grid);
+        boolean gameIsOn = true;
+        do {
+            enterCoordinates(grid, nextMove);
+            print(grid);
+            String stateOfGame = stateOfGame(grid);
+            switch (stateOfGame) {
+                case "X wins" :
+                case "O wins" :
+                case "Draw" :
+                    System.out.println(stateOfGame);
+                    gameIsOn = false;
+                    break;
+                default:
+                    nextMove = nextMove == 'X' ? 'O' : 'X';
+                    break;
+            }
+        } while (gameIsOn);
     }
 
     public static char[][] enterCells() {
-        System.out.print("Enter cells: ");
-        String str = new java.util.Scanner(System.in).nextLine();
         final int n = 3;
         char[][] grid = new char[n][n];
         for (int i = 0, k = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                grid[i][j] = str.charAt(k);
-                k++;
+            for (int j = 0; j < n; j++, k++) {
+                grid[i][j] = '_';
             }
         }
         return grid;
@@ -37,18 +49,6 @@ public class Main {
             System.out.println("|");
         }
         System.out.println("---------");
-    }
-
-    public static int noOX(char[][] grid) {
-        int x = 0;
-        int o = 0;
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                x += grid[i][j] == 'X' ? 1 : 0;
-                o += grid[i][j] == 'O' ? 1 : 0;
-            }
-        }
-        return o + 10 * x;
     }
 
     public static void enterCoordinates(char[][] grid, char nextMove) {
